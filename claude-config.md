@@ -22,9 +22,7 @@ Ograniczenie animacji w interfejsie.
 ---
 
 ## Thinking mode `true | false`
-Tryb "myślenia" — Claude pokazuje wewnętrzny tok rozumowania przed odpowiedzią.  
-- `true` — widoczny proces rozumowania (wolniej, ale dokładniej)  
-- `false` — tylko końcowa odpowiedź
+Tryb "myślenia" — bardziej glębokie myślenie
 
 ---
 
