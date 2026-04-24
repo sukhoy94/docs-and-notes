@@ -109,11 +109,11 @@ Powiadomienia systemowe.
 
 ---
 
-## Output style `default | compact | verbose`
-Styl formatowania odpowiedzi.  
-- `default` — standardowe formatowanie  
-- `compact` — zwięzłe odpowiedzi  
-- `verbose` — rozbudowane, szczegółowe odpowiedzi
+## Output style `default | explanatory | learning`
+Styl komunikacji Claude'a podczas pracy.  
+- `default` — Claude robi zadanie i odpowiada zwięźle, bez tłumaczenia decyzji  
+- `explanatory` — Claude wyjaśnia swoje wybory implementacyjne i wzorce w kodzie  
+- `learning` — Claude zatrzymuje się i prosi użytkownika o napisanie fragmentów kodu samodzielnie (tryb nauki)
 
 ---
 
