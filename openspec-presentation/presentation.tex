@@ -251,6 +251,39 @@
   \end{center}
 \end{frame}
 
+%% Slide: Therac-25
+\begin{frame}{When Specs Are Missing: Therac-25}
+  \vspace{0.3em}
+  \textbf{1985--1987. A radiation therapy machine.}\\[0.8em]
+  \begin{itemize}\setlength\itemsep{0.5em}
+    \item No formal specifications for concurrency
+    \item Race condition in software $\rightarrow$ massive overdose
+    \item \textbf{\color{openred}6 patients died}
+  \end{itemize}
+  \vspace{0.8em}
+  \small\color{opengray}\textit{"The most serious computer-related accidents\\
+  ever investigated."} — Leveson \& Turner, IEEE Computer, 1993
+\end{frame}
+
+%% Slide: Cost of a bug
+\begin{frame}{The Cost of a Missing Spec}
+  \vspace{0.5em}
+  \begin{center}
+    \begin{tabular}{lc}
+      \toprule
+      \textbf{Phase} & \textbf{Cost to fix} \\
+      \midrule
+      Design   & \textbf{\color{opengreen}1x} \\[0.4em]
+      Development & \textbf{\color{opengray}10x} \\[0.4em]
+      Production  & \textbf{\color{openred}100x} \\
+      \bottomrule
+    \end{tabular}\\[1em]
+    \small\color{opengray}— IBM Systems Sciences Institute
+  \end{center}
+  \vspace{0.5em}
+  \normalsize A missing spec is the most expensive bug you'll never find.
+\end{frame}
+
 %% ══════════════════════════════════════════════
 %% SECTION 3: WHAT IS SDD?
 %% ══════════════════════════════════════════════
@@ -265,6 +298,20 @@
     Specs are living documents\\
     that evolve with the project.
   \end{center}
+\end{frame}
+
+%% Slide: Formal specs in the wild
+\begin{frame}{Formal Specs Are Not New}
+  \vspace{0.5em}
+  \begin{itemize}\setlength\itemsep{0.7em}
+    \item \textbf{NASA Apollo} — every line of code had a formal requirement.\\
+      \small\color{opengray}Apollo 11 landed with 4KB RAM. Zero unspecified behavior.\normalsize
+    \item \textbf{TLA+} (Leslie Lamport, Turing Award 2013) — formal spec language\\
+      \small\color{opengray}Used by Amazon Web Services to verify DynamoDB and S3.\normalsize
+    \item \textbf{OpenSpec} — lightweight SDD for the AI era
+  \end{itemize}
+  \vspace{0.8em}
+  \normalsize Specs are not a new idea. \textbf{AI made them urgent again.}
 \end{frame}
 
 \begin{frame}{SDD is NOT Waterfall}
@@ -386,6 +433,57 @@
       {\Large\textbf{Scalable}}   & solo dev to enterprise \\
     \end{tabular}
   \end{center}
+\end{frame}
+
+%% ── BRIDGE SLIDES ──────────────────────────────
+\begin{frame}{}
+  \vspace{3em}
+  \begin{center}
+    {\Large Let's see it in action.}
+  \end{center}
+\end{frame}
+
+\begin{frame}[fragile]{Install in 30 Seconds}
+\begin{lstlisting}
+npm install -g @fission-ai/openspec
+cd your-project
+openspec init
+openspec update
+\end{lstlisting}
+  \vspace{0.8em}
+  Done. Your AI tools are now spec-aware.
+\end{frame}
+
+\begin{frame}{The Mental Model}
+  \vspace{0.3em}
+  \begin{tikzpicture}[
+    box/.style={rectangle, rounded corners=3pt, draw=openblue, fill=openblue!10,
+                minimum width=2cm, minimum height=0.75cm, align=center,
+                font=\small\bfseries},
+    rev/.style={rectangle, rounded corners=3pt, draw=opengreen, fill=opengreen!10,
+                minimum width=2.2cm, minimum height=0.75cm, align=center,
+                font=\small\bfseries, text=opengreen},
+    arr/.style={-{Stealth}, thick, color=openblue},
+    lbl/.style={font=\tiny\color{opengray}, above=0.15cm}
+  ]
+    \node[box] (idea)  {Idea};
+    \node[box, right=0.7cm of idea]  (chg)  {Change};
+    \node[box, right=0.7cm of chg]   (art)  {Artifacts};
+    \node[rev, right=0.7cm of art]   (rev)  {Human\\Review};
+    \node[box, right=0.7cm of rev]   (code) {Code};
+    \node[box, right=0.7cm of code]  (spec) {Specs\\Updated};
+
+    \draw[arr] (idea) -- (chg);
+    \draw[arr] (chg)  -- (art);
+    \draw[arr] (art)  -- (rev);
+    \draw[arr] (rev)  -- (code);
+    \draw[arr] (code) -- (spec);
+  \end{tikzpicture}
+  \vspace{0.8em}
+
+  Every change is \textbf{planned before built},\\
+  \textbf{reviewed before implemented},\\
+  \textbf{archived after done}.
 \end{frame}
 
 %% ══════════════════════════════════════════════
@@ -756,7 +854,100 @@ openspec init
 \end{frame}
 
 %% ══════════════════════════════════════════════
-%% SECTION 10: CLOSING
+%% SECTION 10: CONTROVERSIES
+%% ══════════════════════════════════════════════
+
+\begin{frame}{Fair Criticism}
+  \vspace{1.5em}
+  \begin{center}
+    \Large Not everyone is convinced.\\[1em]
+    \normalsize Let's be honest about the objections.
+  \end{center}
+\end{frame}
+
+\begin{frame}{Controversy \#1}
+  \vspace{0.5em}
+  \begin{center}
+    \large\textit{"This is just waterfall in disguise."}
+  \end{center}
+  \vspace{0.8em}
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \textbf{\color{openred}The critique}\\[0.4em]
+      \small Agile killed BDUF in 2001.\\
+      Writing specs first = Big Design Up Front.\\
+      We're going backwards.
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \textbf{\color{opengreen}The reality}\\[0.4em]
+      \small OpenSpec specs \textit{evolve}.\\
+      Waterfall specs were frozen.\\
+      Iterative $\neq$ specless.
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Controversy \#2}
+  \vspace{0.5em}
+  \begin{center}
+    \large\textit{"AI doesn't actually read specs."}
+  \end{center}
+  \vspace{0.8em}
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \textbf{\color{openred}The critique}\\[0.4em]
+      \small LLMs are probabilistic.\\
+      Context windows overflow.\\
+      AI "agrees" then ignores constraints.
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \textbf{\color{opengreen}The reality}\\[0.4em]
+      \small OpenSpec is designed around this.\\
+      Structured context $>$ chat soup.\\
+      Human review catches drift.
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Controversy \#3}
+  \vspace{0.5em}
+  \begin{center}
+    \large\textit{"Garbage in, garbage out."}
+  \end{center}
+  \vspace{0.8em}
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \textbf{\color{openred}The critique}\\[0.4em]
+      \small A wrong spec perfectly implemented\\
+      is still wrong.\\
+      Who validates the specs?
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \textbf{\color{opengreen}The reality}\\[0.4em]
+      \small This is actually a \textbf{feature}.\\
+      Bad assumptions become\\
+      explicit and traceable.
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{The Honest Answer}
+  \vspace{0.5em}
+  \large OpenSpec is not a silver bullet.\\[1em]
+  \normalsize
+  \begin{itemize}\setlength\itemsep{0.5em}
+    \item It adds overhead — especially for tiny projects
+    \item AI models still hallucinate, specs or not
+    \item Bad specs produce bad software, faster
+  \end{itemize}
+  \vspace{0.8em}
+  \textbf{But:} the alternative is unstructured prompting\\
+  at scale. That's worse.
+
+\end{frame}
+
+%% ══════════════════════════════════════════════
+%% SECTION 11: CLOSING
 %% ══════════════════════════════════════════════
 
 \begin{frame}{Why This Matters}
