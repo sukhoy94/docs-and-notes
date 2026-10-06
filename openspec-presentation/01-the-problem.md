@@ -6,7 +6,7 @@
 
 Subtitle: *"Agree before you build"*
 
-Speaker name, date, event context.
+Andrii Sukhoi — LKIT 2026
 
 ---
 

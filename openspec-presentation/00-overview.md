@@ -7,6 +7,8 @@
 - **Format:** LaTeX Beamer, large font
 - **Total slides:** 44
 - **Rule:** 1 slide = 1 idea, no walls of text
+- **Footer (every slide):** Andrii Sukhoi — LKIT 2026
+- **Event:** Lubelski Klub IT (LKIT) 2026
 
 ## Sections
 
@@ -35,5 +37,6 @@
 
 - LaTeX Beamer with a clean theme (e.g., metropolis or madrid)
 - Large font: \setbeamerfont{normal text}{size=\large}
+- Footer on every slide: \setbeamertemplate{footline}{Andrii Sukhoi — LKIT 2026}
 - TikZ diagrams for workflows and timelines
 - Code snippets with minted or listings package
