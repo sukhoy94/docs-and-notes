@@ -5,7 +5,7 @@
 - **Duration:** ~30 minutes
 - **Language:** English
 - **Format:** LaTeX Beamer, large font
-- **Total slides:** 45
+- **Total slides:** 46
 - **Rule:** 1 slide = 1 idea, no walls of text
 - **Footer (every slide):** Andrii Sukhoi — LKIT 2026
 - **Event:** Lubelski Klub IT (LKIT) 2026
@@ -21,7 +21,7 @@
 | 5 | Core Concepts | 6 | ~4 min |
 | 6 | The Workflow | 5 | ~3 min |
 | 7 | Real Example | 5 | ~4 min |
-| 8 | Advanced Features | 3 | ~2 min |
+| 8 | Advanced Features | 4 | ~3 min |
 | 9 | Comparisons | 3 | ~2 min |
 | 10 | Closing | 4 | ~2 min |
 

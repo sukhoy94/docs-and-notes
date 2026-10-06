@@ -45,3 +45,19 @@ openspec init
 
 Two commands. Your existing code stays untouched.
 Specs describe what you build NEXT, not what already exists.
+
+---
+
+## Slide 38 — Keeping AI in Sync
+
+**`openspec update`**
+
+- Refreshes AI instruction files in your project
+- Run after updating OpenSpec or changing config
+- Ensures every AI tool reads the latest specs and rules
+
+```bash
+openspec update
+```
+
+Your AI assistants are only as good as their instructions.
