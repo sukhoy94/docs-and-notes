@@ -5,7 +5,7 @@
 - **Duration:** ~30 minutes
 - **Language:** English
 - **Format:** LaTeX Beamer, large font
-- **Total slides:** 44
+- **Total slides:** 45
 - **Rule:** 1 slide = 1 idea, no walls of text
 - **Footer (every slide):** Andrii Sukhoi — LKIT 2026
 - **Event:** Lubelski Klub IT (LKIT) 2026
@@ -14,7 +14,7 @@
 
 | # | Section | Slides | Time |
 |---|---------|--------|------|
-| 1 | The Problem | 5 | ~3 min |
+| 1 | The Problem (+ About Me) | 6 | ~4 min |
 | 2 | How We Got Here | 5 | ~3 min |
 | 3 | What is SDD? | 4 | ~3 min |
 | 4 | Enter OpenSpec | 4 | ~2 min |

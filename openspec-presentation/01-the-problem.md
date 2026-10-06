@@ -10,7 +10,20 @@ Andrii Sukhoi — LKIT 2026
 
 ---
 
-## Slide 2 — The Rise of AI Coding
+## Slide 2 — About Me
+
+**Andrii Sukhoi**
+
+- Senior Software Engineer
+- CEO of Dusha Fund
+- Tennis Instructor
+- Running 5 AI agents inside myself
+
+GitHub: github.com/sukhoy94
+
+---
+
+## Slide 3 — The Rise of AI Coding
 
 **">90% of developers now use AI coding assistants"**
 
