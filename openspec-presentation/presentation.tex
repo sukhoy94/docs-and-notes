@@ -192,7 +192,18 @@
   \textbf{But AI created a new gap.}
 \end{frame}
 
-%% Transition: Waterfall -> Agile
+%% ── WATERFALL ──────────────────────────────────
+\begin{frame}{Waterfall Had Specs}
+  \vspace{1em}
+  \Large Waterfall gave us formal specifications.\\[1em]
+  \normalsize But they were:
+  \begin{itemize}\setlength\itemsep{0.5em}
+    \item Written once, \textbf{never updated}
+    \item Disconnected from code
+    \item Dead on arrival
+  \end{itemize}
+\end{frame}
+
 \begin{frame}{Waterfall's Problem}
   \vspace{0.3em}
   \begin{columns}[T]
@@ -215,7 +226,20 @@
   \small\color{opengray}\textit{"Responding to change over following a plan"} — Agile Manifesto, 2001
 \end{frame}
 
-%% Transition: Agile -> TDD
+%% ── AGILE ──────────────────────────────────────
+\begin{frame}{Agile Dropped Formal Specs}
+  \vspace{1em}
+  \begin{center}
+    \Large\textit{"Working software over\\
+    comprehensive documentation"}\\[1em]
+    \normalsize\color{opengray}— Agile Manifesto, 2001\\[1.5em]
+    \normalsize\color{black}
+    User stories replaced specs.\\
+    Conversations replaced documents.\\
+    Speed replaced formality.
+  \end{center}
+\end{frame}
+
 \begin{frame}{Agile's Problem}
   \vspace{0.3em}
   \begin{columns}[T]
@@ -238,7 +262,21 @@
   \small\color{opengray}Kent Beck popularized TDD in \textit{Extreme Programming}, 1999.
 \end{frame}
 
-%% Transition: TDD -> BDD
+%% ── TDD ────────────────────────────────────────
+\begin{frame}{TDD: Tests as Specs}
+  \vspace{0.5em}
+  \large Tests define behavior, but not intent.\\[1.5em]
+  \begin{center}
+    \large\textit{"Testing shows the presence,\\
+    not the absence of bugs."}\\[0.8em]
+    \normalsize\color{opengray}— Edsger W. Dijkstra, NATO Conference, 1969
+  \end{center}
+  \vspace{1em}
+  \normalsize
+  Tests verify \textbf{what} the code does.\\
+  They don't explain \textbf{why} it should do it.
+\end{frame}
+
 \begin{frame}{TDD's Problem}
   \vspace{0.3em}
   \begin{columns}[T]
@@ -261,7 +299,23 @@
   \small\color{opengray}Dan North introduced BDD in 2006. Cucumber, SpecFlow born from this.
 \end{frame}
 
-%% Transition: BDD -> AI-Assisted
+%% ── BDD ────────────────────────────────────────
+\begin{frame}[fragile]{BDD: Behavior as Specs}
+  \vspace{0.3em}
+  \large Requirements written in plain English.\\[0.8em]
+  \normalsize
+\begin{lstlisting}
+Feature: User login
+
+  Scenario: Successful login
+    Given a registered user
+    When they enter valid credentials
+    Then they are redirected to dashboard
+\end{lstlisting}
+  \vspace{0.5em}
+  Business, QA, and Dev all read the \textbf{same document}.
+\end{frame}
+
 \begin{frame}{BDD's Problem}
   \vspace{0.3em}
   \begin{columns}[T]
@@ -284,7 +338,21 @@
   \small\color{opengray}GitHub Copilot (2021), ChatGPT (2022), Claude, Cursor...
 \end{frame}
 
-%% Transition: AI-Assisted -> ???
+%% ── AI-ASSISTED ────────────────────────────────
+\begin{frame}{AI-Assisted: Speed at Scale}
+  \vspace{0.3em}
+  \large AI coding assistants changed everything.\\[1em]
+  \normalsize
+  \begin{itemize}\setlength\itemsep{0.5em}
+    \item Autocomplete entire functions from a comment
+    \item Generate boilerplate in seconds
+    \item Refactor, test, document — all on demand
+  \end{itemize}
+  \vspace{0.8em}
+  \textbf{>90\% of developers} use AI assistants today.\\
+  \small\color{opengray}— GitHub Developer Survey, 2025
+\end{frame}
+
 \begin{frame}{AI-Assisted's Problem}
   \vspace{0.3em}
   \begin{columns}[T]
@@ -307,44 +375,7 @@
   \small\color{opengray}That's where OpenSpec comes in.
 \end{frame}
 
-\begin{frame}{Waterfall Had Specs}
-  \vspace{1em}
-  \Large Waterfall gave us formal specifications.\\[1em]
-  \normalsize But they were:
-  \begin{itemize}\setlength\itemsep{0.5em}
-    \item Written once, \textbf{never updated}
-    \item Disconnected from code
-    \item Dead on arrival
-  \end{itemize}
-\end{frame}
-
-\begin{frame}{Agile Dropped Formal Specs}
-  \vspace{1em}
-  \begin{center}
-    \Large\textit{"Working software over\\
-    comprehensive documentation"}\\[1em]
-    \normalsize\color{opengray}— Agile Manifesto, 2001\\[1.5em]
-    \normalsize\color{black}
-    User stories replaced specs.\\
-    Conversations replaced documents.\\
-    Speed replaced formality.
-  \end{center}
-\end{frame}
-
-\begin{frame}{TDD: Tests as Specs}
-  \vspace{0.5em}
-  \large Tests define behavior, but not intent.\\[1.5em]
-  \begin{center}
-    \large\textit{"Testing shows the presence,\\
-    not the absence of bugs."}\\[0.8em]
-    \normalsize\color{opengray}— Edsger W. Dijkstra, NATO Conference, 1969
-  \end{center}
-  \vspace{1em}
-  \normalsize
-  Tests verify \textbf{what} the code does.\\
-  They don't explain \textbf{why} it should do it.
-\end{frame}
-
+%% ── THE GAP ────────────────────────────────────
 \begin{frame}{The Gap}
   \vspace{0.5em}
   \begin{columns}[T]
