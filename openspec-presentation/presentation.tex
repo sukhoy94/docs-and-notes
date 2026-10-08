@@ -192,6 +192,121 @@
   \textbf{But AI created a new gap.}
 \end{frame}
 
+%% Transition: Waterfall -> Agile
+\begin{frame}{Waterfall's Problem}
+  \vspace{0.3em}
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \textbf{\color{openred}Waterfall failed because...}\\[0.6em]
+      \normalsize
+      Requirements frozen at day one.\\[0.4em]
+      Customer sees product after \textbf{years}.\\[0.4em]
+      Feedback loop: \textbf{too late}.
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \textbf{\color{opengreen}Agile solved it:}\\[0.6em]
+      \normalsize
+      Short iterations (sprints).\\[0.4em]
+      Working software every 2 weeks.\\[0.4em]
+      Requirements can change.
+    \end{column}
+  \end{columns}
+  \vspace{1em}
+  \small\color{opengray}\textit{"Responding to change over following a plan"} — Agile Manifesto, 2001
+\end{frame}
+
+%% Transition: Agile -> TDD
+\begin{frame}{Agile's Problem}
+  \vspace{0.3em}
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \textbf{\color{openred}Agile failed because...}\\[0.6em]
+      \normalsize
+      Speed without safety net.\\[0.4em]
+      Regressions ship constantly.\\[0.4em]
+      \textbf{"Move fast, break things."}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \textbf{\color{opengreen}TDD solved it:}\\[0.6em]
+      \normalsize
+      Write tests first.\\[0.4em]
+      Red $\to$ Green $\to$ Refactor.\\[0.4em]
+      Safety net for fast iterations.
+    \end{column}
+  \end{columns}
+  \vspace{1em}
+  \small\color{opengray}Kent Beck popularized TDD in \textit{Extreme Programming}, 1999.
+\end{frame}
+
+%% Transition: TDD -> BDD
+\begin{frame}{TDD's Problem}
+  \vspace{0.3em}
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \textbf{\color{openred}TDD failed because...}\\[0.6em]
+      \normalsize
+      Tests written in code.\\[0.4em]
+      Business can't read them.\\[0.4em]
+      Gap between \textbf{intent} and \textbf{test}.
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \textbf{\color{opengreen}BDD solved it:}\\[0.6em]
+      \normalsize
+      Human-readable scenarios.\\[0.4em]
+      \texttt{GIVEN / WHEN / THEN}\\[0.4em]
+      Business + Dev speak same language.
+    \end{column}
+  \end{columns}
+  \vspace{1em}
+  \small\color{opengray}Dan North introduced BDD in 2006. Cucumber, SpecFlow born from this.
+\end{frame}
+
+%% Transition: BDD -> AI-Assisted
+\begin{frame}{BDD's Problem}
+  \vspace{0.3em}
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \textbf{\color{openred}BDD failed because...}\\[0.6em]
+      \normalsize
+      Writing scenarios is slow.\\[0.4em]
+      Maintenance overhead grows.\\[0.4em]
+      Adoption drops in fast teams.
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \textbf{\color{opengreen}AI-Assisted solved it:}\\[0.6em]
+      \normalsize
+      AI writes boilerplate fast.\\[0.4em]
+      Code generation at scale.\\[0.4em]
+      Developer productivity $\uparrow\uparrow$
+    \end{column}
+  \end{columns}
+  \vspace{1em}
+  \small\color{opengray}GitHub Copilot (2021), ChatGPT (2022), Claude, Cursor...
+\end{frame}
+
+%% Transition: AI-Assisted -> ???
+\begin{frame}{AI-Assisted's Problem}
+  \vspace{0.3em}
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \textbf{\color{openred}AI-Assisted fails because...}\\[0.6em]
+      \normalsize
+      AI works from chat history.\\[0.4em]
+      No formal requirements.\\[0.4em]
+      Fast, but \textbf{in the wrong direction}.
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \textbf{\color{opengreen}SDD solves it:}\\[0.6em]
+      \normalsize
+      Specs before code.\\[0.4em]
+      Human reviews artifacts.\\[0.4em]
+      AI implements \textbf{what was agreed}.
+    \end{column}
+  \end{columns}
+  \vspace{1em}
+  \small\color{opengray}That's where OpenSpec comes in.
+\end{frame}
+
 \begin{frame}{Waterfall Had Specs}
   \vspace{1em}
   \Large Waterfall gave us formal specifications.\\[1em]
