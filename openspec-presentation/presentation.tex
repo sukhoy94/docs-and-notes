@@ -679,6 +679,63 @@ openspec/changes/add-dark-mode/
   \end{center}
 \end{frame}
 
+%% ── HOW TO READ A SPEC ──────────────────────────────
+
+\begin{frame}{How to Read a Spec}
+  \vspace{0.3em}
+  Read in this order:
+  \begin{enumerate}\setlength\itemsep{0.5em}
+    \item \textbf{Purpose} — understand \textit{why} before \textit{what}.\\
+      \small\color{opengray}If you don't understand the why, the requirements won't make sense.\normalsize
+    \item \textbf{Out of Scope} — know the boundaries first.\\
+      \small\color{opengray}Scope defines what the spec is NOT responsible for.\normalsize
+    \item \textbf{Requirements} — each SHALL is a contract.\\
+      \small\color{opengray}Read as: "The system is obligated to..."\normalsize
+    \item \textbf{Scenarios} — these show how requirements behave in practice.\\
+      \small\color{opengray}WHEN/THEN are the edge cases hiding in plain sight.\normalsize
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}{Green Flags: This Spec is Good}
+  \vspace{0.3em}
+  \begin{itemize}\setlength\itemsep{0.6em}
+    \item \textbf{\color{opengreen}Testable} — "SHALL respond within 200ms"\\
+      \small\color{opengray}Not: "SHALL be fast"\normalsize
+    \item \textbf{\color{opengreen}One responsibility} — fits on one screen, one capability
+    \item \textbf{\color{opengreen}Scenarios cover edge cases} — not just the happy path
+    \item \textbf{\color{opengreen}No HOW, only WHAT} — requirements don't dictate implementation
+    \item \textbf{\color{opengreen}Explicit out of scope} — you know what it deliberately ignores
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Red Flags: This Spec is Bad}
+  \vspace{0.3em}
+  \begin{itemize}\setlength\itemsep{0.6em}
+    \item \textbf{\color{openred}Vague language} — "user-friendly", "fast", "secure", "intuitive"\\
+      \small\color{opengray}These cannot be tested. They mean nothing.\normalsize
+    \item \textbf{\color{openred}Implementation leaking in} — "SHALL use Redis for caching"\\
+      \small\color{opengray}That's design, not a requirement.\normalsize
+    \item \textbf{\color{openred}Missing scenarios} — requirements without examples\\
+      \small\color{opengray}If there are no scenarios, no one agreed on the details.\normalsize
+    \item \textbf{\color{openred}Weasel words} — "should", "might", "usually", "as needed"\\
+      \small\color{opengray}SHALL is mandatory. "should" means maybe.\normalsize
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{The Smell Test}
+  \vspace{0.5em}
+  Ask these questions when reviewing a spec:\\[0.8em]
+  \begin{tabular}{lll}
+    \textbf{Question} & \textbf{Yes} & \textbf{No} \\
+    \midrule
+    Can I write a test for this requirement? & \color{opengreen}Good & \color{openred}Rewrite \\[0.4em]
+    Does it say WHY, not HOW?               & \color{opengreen}Good & \color{openred}Rewrite \\[0.4em]
+    Does every requirement have a scenario? & \color{opengreen}Good & \color{openred}Add one \\[0.4em]
+    Is "out of scope" section present?      & \color{opengreen}Good & \color{openred}Add it \\[0.4em]
+    Fits on one screen?                     & \color{opengreen}Good & \color{openred}Split it \\
+  \end{tabular}
+\end{frame}
+
 %% ══════════════════════════════════════════════
 %% SECTION 6: THE WORKFLOW
 %% ══════════════════════════════════════════════
