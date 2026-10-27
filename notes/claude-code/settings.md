@@ -22,7 +22,7 @@ Ograniczenie animacji w interfejsie.
 ---
 
 ## Thinking mode `true | false`
-Tryb "myślenia" — bardziej glębokie myślenie
+Tryb "myślenia" — bardziej głębokie myślenie
 
 ---
 
